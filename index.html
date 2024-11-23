@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for MEP Designs - Work in Progress</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+            background: linear-gradient(to bottom, #f4f7f9, #e0e7ff); /* Light gradient */
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #1e293b; /* Dark blue-gray */
+            color: #fff;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #38bdf8; /* Light blue */
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* Work in Progress Banner */
+        #work-in-progress {
+            background-color: #fde047; /* Yellow */
+            color: #1e293b; /* Dark blue-gray */
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(to bottom right, #1e293b, #334155); /* Gradient dark blue-gray */
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        #hero button {
+            background-color: #38bdf8;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #hero button:hover {
+            background-color: #0ea5e9;
+        }
+
+        /* RAG Interaction Section (moved up) */
+        #rag-interaction {
+            padding: 50px 10%;
+            background: linear-gradient(to bottom, #fff, #e0f2fe); /* Subtle blue gradient */
+            text-align: center;
+            margin-top: -50px; /* Pull it closer to the top */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #rag-interaction h2 {
+            color: #1e293b; /* Dark text */
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        #rag-interaction input, #rag-interaction textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #rag-interaction button {
+            background-color: #3b82f6;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #rag-interaction button:hover {
+            background-color: #2563eb;
+        }
+
+        #rag-interaction textarea {
+            background-color: #f9fafb; /* Light gray background */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1e293b;
+            color: #fff;
+            padding: 20px 10%;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        footer nav ul li a {
+            text-decoration: none;
+            color: #38bdf8;
+            font-size: 0.9rem;
+        }
+
+        footer nav ul li a:hover {
+            color: #0ea5e9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Work in Progress Banner -->
+    <div id="work-in-progress">🚧 Work in Progress 🚧</div>
+
+    <header>
+        <div class="logo">Engineer-AI Solutions</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Revolutionizing MEP Designs with AI</h1>
+            <p>Advanced RAG-powered AI to streamline your mechanical, electrical, and plumbing designs.</p>
+            <button onclick="alert('Feature Coming Soon!')">CLOSE</button>
+        </section>
+
+        <section id="rag-interaction">
+            <h2>Ask AI Your MEP Questions</h2>
+            <input type="text" placeholder="Enter your question here..." id="user-question">
+            <button onclick="generateAnswer()">Submit</button>
+            <textarea id="ai-answer" rows="5" placeholder="AI-generated answers will appear here..." readonly></textarea>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Engineer-AI Solutions. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script>
+        function generateAnswer() {
+            const question = document.getElementById('user-question').value;
+            const answerBox = document.getElementById('ai-answer');
+
+            // Simulating RAG response
+            if (question.trim() !== "") {
+                answerBox.value = "Processing your question... (Simulated RAG response)";
+            } else {
+                answerBox.value = "Please enter a question.";
+            }
+        }
+    </script>
+</body>
+</html>
